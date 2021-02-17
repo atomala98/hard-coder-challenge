@@ -25,3 +25,10 @@ Modules used:
   - smtplib, email, ssl - email sending
   - pandas - handling .xlsx file
   - getpass - password input
+
+# Day 4 - BMI app
+
+Script for calculating BMI based on API and creating plan of activities for a week, based on calculated BMI.
+Modules used: requests - conneting to weather API
+  -  requests - conneting to BMI API
+  -  random - creating random activieties list
