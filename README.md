@@ -17,3 +17,11 @@ Modules used:
   - pytz - for timezone info
   - requests - conneting to weather API, scrapping HTML code from name day info site
   - BeautifulSoup - checking for names in HTML code
+  
+ # Day 3 - Email sender
+ 
+Script for sending emails for every person in base (excel chart). After logging on gmail account in terminal, emails will be automaticly sent to all persons in database. Email contains of short message and image, named with person name and surname.
+Modules used:
+  - smtplib, email, ssl - email sending
+  - pandas - handling .xlsx file
+  - getpass - password input
