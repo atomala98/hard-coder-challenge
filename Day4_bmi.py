@@ -1,5 +1,4 @@
 import requests
-import json
 from random import randint, sample
 
 training_plan = {"Monday": {'Activity': '', 'Time': ''}, "Tuesday": 'Day off', "Wednesday": {'Activity': '', 'Time': ''}, "Thursday": 'Day off', "Friday": {'Activity': '', 'Time': ''}, "Saturday": 'Day off', "Sunday": 'Day off'}
@@ -8,8 +7,8 @@ activities = {"running": "10", "swimming": "15", "gym" : "20", "yoga": "25", "cy
 url = "https://body-mass-index-bmi-calculator.p.rapidapi.com/metric"
 
 try:
-    weight = input("Your weight: ")
-    height = input("Your height: ")
+    weight = input("Your weight [kg]: ")
+    height = input("Your height [m]: ")
 except:
     print("Invalid data!")
 
@@ -45,13 +44,12 @@ while True:
 time_multiplier = float(BMI["bmi"])/10
 
 activity_list = sample(range(5), 3)
-print(activity_list)
 
 i = 0
 for key, value in training_plan.items():
     if isinstance(value, dict):
         value['Activity'] = list(activities.keys())[activity_list[i]]
-        value['Time'] = min(list(activities.values())[activity_list[i]], time)
+        value['Time'] = min(int(list(activities.values())[activity_list[i]]), time)
         i += 1
 
 with open('file.txt', 'w') as file:
@@ -60,7 +58,7 @@ with open('file.txt', 'w') as file:
         if isinstance(value, dict):
             for key2, value2 in value.items():
                 file.write(key2 + ": ")
-                file.write(value2 + "\n")
+                file.write(str(value2) + "\n")
             file.write("\n")
         else:
             file.write(value + "\n\n")

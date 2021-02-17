@@ -1,0 +1,24 @@
+Monday
+Activity: gym
+Time: 20
+
+Tuesday
+Day off
+
+Wednesday
+Activity: cycling
+Time: 20
+
+Thursday
+Day off
+
+Friday
+Activity: running
+Time: 10
+
+Saturday
+Day off
+
+Sunday
+Day off
+
