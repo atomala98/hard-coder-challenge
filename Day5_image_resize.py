@@ -1,5 +1,4 @@
 import os
-import sys
 from PIL import Image
 from io import BytesIO
 
@@ -24,27 +23,30 @@ setup = {
 
 used_memory = 0 
 saved_memory = 0
-for filename in os.listdir('./img'):
-    with Image.open('./img/{}'.format(filename)) as image: 
-        format = filename.split('.')[1]
-        width, height = image.size 
-        small_image = image.resize((width//2, height//2))
-        img_file = BytesIO()
-        image.save(img_file, format)
-        bigger_img_size = img_file.tell()
-        img_file = BytesIO()
-        small_image.save(img_file, format)
-        smaller_img_size = img_file.tell()
-        used_memory += bigger_img_size
-        saved_memory += bigger_img_size - smaller_img_size
-        try:
-            small_image.save('./smaller/small {}'.format(filename))
-        except:
-            os.mkdir('./smaller')
-            small_image.save('./smaller/small {}'.format(filename))
+try:
+    for filename in os.listdir('./img'):
+        with Image.open('./img/{}'.format(filename)) as image: 
+            format = filename.split('.')[1]
+            width, height = image.size 
+            small_image = image.resize((width//2, height//2))
+            img_file = BytesIO()
+            image.save(img_file, format)
+            bigger_img_size = img_file.tell()
+            img_file = BytesIO()
+            small_image.save(img_file, format)
+            smaller_img_size = img_file.tell()
+            used_memory += bigger_img_size
+            saved_memory += bigger_img_size - smaller_img_size
+            try:
+                small_image.save('./smaller/small {}'.format(filename))
+            except:
+                os.mkdir('./smaller')
+                small_image.save('./smaller/small {}'.format(filename))
+except:
+    print("No /img folder.")
 
 percentage_memory = 100*saved_memory/used_memory
-print("You got {:.2f} lighter files.".format(percentage_memory))
+print("You got {:.2f}% lighter files.".format(percentage_memory))
 
 for key, value in setup.items():
     if 10**setup[key]['power'] > saved_memory:
