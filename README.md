@@ -32,3 +32,10 @@ Script for calculating BMI based on API and creating plan of activities for a we
 Modules used: requests - conneting to weather API
   -  requests - conneting to BMI API
   -  random - creating random activieties list
+
+# Day 5 - Image resizer
+Script halves every picture in /img folder by half and saves them into /smaller folder. Script calculates how much memory is saved and prints it both in % and bytes.
+Modules used:
+  - os - iterating througth files
+  - pillow - image operations
+  - io - calculating memory difference
