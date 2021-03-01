@@ -39,3 +39,9 @@ Modules used:
   - os - iterating througth files
   - pillow - image operations
   - io - calculating memory difference
+
+# Day 6 - Films library
+
+Script connecting with IMDB API, gathering info about films basing on IMDB searching engine.
+Modules used:
+  - requests - conntecting to IMDB API
