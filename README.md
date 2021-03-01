@@ -44,4 +44,4 @@ Modules used:
 
 Script connecting with IMDB API, gathering info about films basing on IMDB searching engine.
 Modules used:
-  - requests = conntecting to IMDB API
+  - requests - conntecting to IMDB API
