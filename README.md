@@ -45,3 +45,12 @@ Modules used:
 Script connecting with IMDB API, gathering info about films basing on IMDB searching engine.
 Modules used:
   - requests - conntecting to IMDB API
+
+
+# Day 7 - Password generator
+
+Script for generating strong passwords, each containg one lower letter, upper letter, digit and special symbol. After generation, password gets copied to clipboard.
+Modules used:
+  - random - generating password
+  - string - ready to use char arrays (eg. string.lowercase)
+  - pyperclip - auto-copying string
