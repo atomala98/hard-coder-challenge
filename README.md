@@ -54,3 +54,10 @@ Modules used:
   - random - generating password
   - string - ready to use char arrays (eg. string.lowercase)
   - pyperclip - auto-copying string
+
+# Day 8 - Library
+
+Script connecting with online library API, retriving informations about books. Script is connected with local SQLite3 database, storing informations about which books are borrowed, and who borrowed them.
+Modules used:
+  - requests - connecting with library API
+  - sqlalchemy - connecting script with database
